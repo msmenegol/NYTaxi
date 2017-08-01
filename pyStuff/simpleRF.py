@@ -63,3 +63,5 @@ rf_predictions = rf_classifier.predict(test_data[['vendor_id', 'passenger_count'
 #create submission .csv file
 submission_file = pd.DataFrame(([x,y] for x,y in zip(test_data['id'],rf_predictions)), columns = ['id', 'trip_duration'])
 submission_file.to_csv('submission_file.csv', index = False)
+
+print('Script executed in: ' + str(time.time()-start_time) + ' seconds')
